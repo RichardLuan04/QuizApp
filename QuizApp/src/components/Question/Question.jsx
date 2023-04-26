@@ -6,18 +6,19 @@ import styles from './Question.module.css'
 const Question = () => {
 
     const [quizState, dispatch] = useContext(QuizContext)
+    const currentQuestion = quizState.questions[quizState.currentQuestion]
 
     return (
-        <div id={styles.question}>
+        <div class={styles.question}>
             <p>
-                Pergunta {quizState.currentQuestion} de {quizState.questions.length}
+                Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}
             </p>
-            <h2>sim</h2>
-            <div id={styles.optionsContainer}>
+            <h2> {currentQuestion.question} </h2>
+            <div class={styles.optionsContainer}>
                 <p>Opções</p>
             </div>
 
-            <button>Continuar</button>
+            <button onClick={() => dispatch({type: "CHANGE_QUESTION"})}>Continuar</button>
         </div>
     )
 }

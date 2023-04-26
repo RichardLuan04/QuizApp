@@ -11,7 +11,7 @@ const Welcome = () => {
   const [quizState, dispatch] = useContext(QuizContext)
 
   return (
-    <div class={styles.welcome}>
+    <div className={styles.welcome}>
         <h2>Seja bem vindo</h2>
         <p>Clique no botão abaixo para começar:</p>
         <button onClick={() => dispatch({type: "CHANGE_STATE"})}>Iniciar</button>

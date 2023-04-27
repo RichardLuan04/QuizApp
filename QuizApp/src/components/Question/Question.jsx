@@ -32,7 +32,7 @@ const Question = () => {
             </div>
             
             {quizState.answerSelected && (
-                <button onClick={() => dispatch({type: "CHANGE_QUESTION"})}> Continuar </button>
+                <button onClick={() => dispatch({type: "CHANGE_QUESTION", theme: quizState.title })}> Continuar </button>
             )}
         </div>
     )

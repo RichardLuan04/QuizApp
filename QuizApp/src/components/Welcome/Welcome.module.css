@@ -15,3 +15,8 @@
 .welcome img {
     margin-top: 2em;
 }
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}

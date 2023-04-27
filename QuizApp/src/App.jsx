@@ -10,14 +10,14 @@ import './App.css'
 function App() {
 
   const [quizState, dispatch] = useContext(QuizContext)
-
+/*
   useEffect(() => { // Embaralhando as perguntas
     dispatch({type: "REORDER_QUESTIONS"})
   }, [])
-
+*/
   return (
     <div className="App">
-      <h1>Quiz de Programação</h1>
+      <h1>{quizState.title}</h1>
 
       {quizState.gameStage === "Start" && <Welcome />}
       {quizState.gameStage === "Playing" && <Question />}

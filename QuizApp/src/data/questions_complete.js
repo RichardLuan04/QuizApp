@@ -50,6 +50,16 @@ const data = [
           options: ["static", "absolute", "fixed", "relative"],
           answer: "fixed",
         },
+        {
+          question: "Qual é a função da propriedade CSS display: flex?",
+          options: [
+            "Ela alinha elementos horizontalmente dentro de um container flexível",
+            "Ela alinha elementos verticalmente dentro de um container flexível",
+            "Ela transforma elementos em caixas flexíveis, permitindo que sejam organizados facilmente em layouts responsivos e escaláveis",
+            "Ela define se um elemento deve ser exibido ou não na página"
+          ],
+          answer: "Ela transforma elementos em caixas flexíveis, permitindo que sejam organizados facilmente em layouts responsivos e escaláveis"
+        }
       ],
     },
     {

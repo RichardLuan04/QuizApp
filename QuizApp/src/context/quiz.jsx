@@ -70,7 +70,7 @@ const quizReducer = (state, action) => {
             const option = action.payload.option
             let correctAnswer = 0
 
-            if (answer === option) correctAnswer = 1
+            if (answer === option) correctAnswer = 10
 
             return {
                 ...state,

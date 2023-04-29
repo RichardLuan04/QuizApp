@@ -17,22 +17,16 @@ const quizReducer = (state, action) => {
         case "CHANGE_STATE":
 
             let category = action.category
+
+            const reoderedQuestions = questions[category].questions.sort(() => {
+                return Math.random() - 0.5
+            })
             
             return {
                 ...state,
                 gameStage: Stages[1],
-                questions: questions[category].questions,
+                questions: reoderedQuestions,
                 title: questions[category].category
-            }
-
-        case "REORDER_QUESTIONS":
-            const reoderedQuestions = questions.sort(() => {
-                return Math.random() - 0.5
-            })
-
-            return {
-                ...state,
-                questions: reoderedQuestions
             }
 
         case "CHANGE_QUESTION":

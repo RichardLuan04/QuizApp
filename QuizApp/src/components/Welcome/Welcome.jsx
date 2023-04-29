@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react'
 import { QuizContext } from '../../context/quiz'
 
 import QuizImg from '../../assets/quiz.svg'
+import Questions from '../../data/questions_complete'
 
 import styles from './Welcome.module.css'
 
@@ -16,9 +17,9 @@ const Welcome = () => {
       <p>Escolha qual quiz deseja fazer:</p>
 
       <div className={styles.buttons}>
-        <button onClick={() => dispatch({ type: "CHANGE_STATE", category: 0 })}>HTML</button>
-        <button onClick={() => dispatch({ type: "CHANGE_STATE",  category: 1 })}>CSS</button>
-        <button onClick={() => dispatch({ type: "CHANGE_STATE",  category: 2 })}>JavaScript</button>
+        {Questions.map((button, key) => (
+          <button onClick={() => dispatch({type: "CHANGE_STATE", category: key})} key={key}> {button.category} </button>
+        ))}
       </div>
 
       <img src={QuizImg} alt="Inicio do quiz" />

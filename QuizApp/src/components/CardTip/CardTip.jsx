@@ -1,25 +1,26 @@
 import { useContext } from 'react'
 import { QuizContext } from '../../context/quiz'
-import { Modal, Box } from '@mui/material';
+
+import Modal from 'react-modal'
 
 import styles from './CardTip.module.css'
 
-const CardTip = ({open}) => {
+const CardTip = () => {
 
     const [quizState, dispatch] = useContext(QuizContext)
     const currentQuestion = quizState.questions[quizState.currentQuestion]
 
     return (
-        <Modal open={open} onClose={() => {
-            dispatch({type: "CLOSE_MODAL"})
-        }}
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        closeAfterTransition>
-            <Box className={styles.cardTip}>
-                <p> {currentQuestion.tip} </p>
-            </Box>
-        </Modal>
+        <>
+            {quizState.tipText && (
+                <div className={styles.cardTip}>
+                    <div className={styles.close}>
+                        <button onClick={() => dispatch({type: "CLOSE_TIP"})}> X </button>
+                    </div>
+                    <p> {currentQuestion.tip} </p>
+                </div>
+            )}
+        </>
     )
 }
 

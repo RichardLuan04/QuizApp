@@ -71,13 +71,18 @@ const quizReducer = (state, action) => {
             return {
                 ...state,
                 score: state.score + correctAnswer,
-                answerSelected: option,
+                answerSelected: option
             }
-        case "CLOSE_MODAL":
+        case "CLOSE_TIP":
             return {
                 ...state,
                 tipText: false,
                 tipButton: false
+            }
+        case "SHOW_TIP" :
+            return {
+                ...state,
+                tipText: true
             }
 
         default:

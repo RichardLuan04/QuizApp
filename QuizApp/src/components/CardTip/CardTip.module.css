@@ -1,19 +1,52 @@
 .cardTip {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     width: 600px;
     border-radius: 10px;
     background-color: #5d11b4;
+    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.6);
     z-index: 2;
+    padding: 1rem;
+    animation: smooth-in normal 500ms;
 }
 
 .cardTip p {
     width: 75%;
-    padding: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     z-index: 3;
     color: #fff;
+}
+
+.close {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.close button {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+}
+
+@keyframes smooth-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    } to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes smooth-out {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    } to {
+        transform: scale(0.5);
+        opacity: 0;
+    }
 }

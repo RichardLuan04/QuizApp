@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { QuizContext } from '../../context/quiz'
 
 import Option from '../Option/Option'
@@ -23,7 +23,7 @@ const Question = () => {
     return (
         <div className={styles.question}>
 
-            <CardTip open={quizState.tipText}/>
+            <CardTip/>
 
             <p id={styles.quizText}>
                 Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}

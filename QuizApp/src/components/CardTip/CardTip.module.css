@@ -1,0 +1,19 @@
+.cardTip {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    border-radius: 10px;
+    background-color: #5d11b4;
+    z-index: 2;
+}
+
+.cardTip p {
+    width: 75%;
+    padding: 1rem;
+    font-weight: 600;
+    z-index: 3;
+    color: #fff;
+}

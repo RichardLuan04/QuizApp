@@ -9,6 +9,8 @@ const InitialState = {
     currentQuestion: 0,
     score: 0,
     answerSelected: false,
+    tipButton: true,
+    tipText: false,
     title: 'Quiz de Programação'
 }
 
@@ -71,6 +73,13 @@ const quizReducer = (state, action) => {
                 score: state.score + correctAnswer,
                 answerSelected: option,
             }
+        case "CLOSE_MODAL":
+            return {
+                ...state,
+                tipText: false,
+                tipButton: false
+            }
+
         default:
             return state
     }
